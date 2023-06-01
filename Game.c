@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include <strings.h>
+#include <string.h>
 #include <windows.h>
 #include <conio.h>
-#define V 21
+
+#define V 20
 #define H 75
 #define N 100
 
@@ -30,23 +31,130 @@ void perulanganPermainan(char peta[V][H], int ukuran);
 void ambilInputPengguna(char peta[V][H], int *ukuran, int *mati);
 void perbaruiPermainan(char peta[V][H], int ukuran);
 void aturDataIntro2(char peta[V][H], int ukuran);
-
 void gotoxy(int x, int y);
-
 void tampilkanPeta(char peta[V][H]);
+void menu();
 
 int main()
 {
     int ukuran;
     char peta[V][H];
-
+    menu();
     inisialisasi(&ukuran, peta);
     tampilkanPeta(peta);
     system("pause");
     perulanganPermainan(peta, ukuran);
+    system("pause");
+    clearTerminal();
+    main();
+}
+
+void clearTerminal()
+{
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+}
+
+void menu()
+{
+
+    printf(" ===========================================================================\n");
+    printf(" ||                                                                       ||\n");
+    printf(" ||                           SNAKE GAME                                  ||\n");
+    printf(" ||                                                                       ||\n");
+    printf(" ||                      __    __    __    __                             ||\n");
+    printf(" ||                     /  \\  /  \\  /  \\  /  \\                            ||\n");
+    printf(" ||____________________/  __\\/  __\\/  __\\/  __\\___________________________||\n");
+    printf(" ||___________________/  /__/  /__/  /__/  /______________________________||\n");
+    printf(" ||                   | / \\   / \\   / \\   / \\  \\____                      ||\n");
+    printf(" ||                   |/   \\_/   \\_/   \\_/   \\    o \\                     ||\n");
+    printf(" ||                                           \\_____/--<                  ||\n");
+    printf(" ||                                                                       ||\n");
+    printf(" ||                                                                       ||\n");
+    printf(" ||                              Menu                                     ||\n");
+    printf(" ||									  ||\n");
+    printf(" ||                         -> 1. Play Game                               ||\n");
+    printf(" ||                         -> 2. Instructions                            ||\n");
+    printf(" ||                         -> 3. Credits                                 ||\n");
+    printf(" ||                         -> 4. Exit                                    ||\n");
+    printf(" ||				                                          ||\n");
+    printf(" ||                                                                       ||\n");
+    printf(" ===========================================================================\n");
+
+
+    char input;
+    input = getch();
+    clearTerminal();
+
+    if (input == '1') {
+        clearTerminal();
+    } else if (input == '2') {
+    printf(" ============================================================================\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                               INSTRUKSI                                 ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||  - Gunakan tombol AWSD untuk mengontrol pergerakan ular.                ||\n");
+    printf(" ||  - Tujuan permainan adalah memakan makanan dan memanjangkan ular.       ||\n");
+    printf(" ||  - Jika ular menabrak dinding atau dirinya sendiri, permainan berakhir. ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ============================================================================\n");
+    system("pause");
+    clearTerminal();
+    main();
+
+
+    } else if (input == '3') {
+       printf(" ============================================================================\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                                KREDIT                                   ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" || Game dikembangkan oleh:                                                 ||\n");
+    printf(" ||  - Kelompok 1 Daspro Kelas C                                            ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" || Terima kasih kepada:                                                    ||\n");
+    printf(" ||  - OpenAI atas menyediakan model ChatGPT yang membantu kami untuk       ||\n");
+    printf(" ||    memprogram masterpiece ini                                           ||\n");
+    printf(" ||  - GitHub atas menyediakan platform untuk berbagi kode.                 ||\n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||                      _____ _ _   _    _       _                         || \n");
+    printf(" ||                     / ____(_) | | |  | |     | |                        ||  \n");
+    printf(" ||                    | |  __ _| |_| |__| |_   _| |__                      || \n");
+    printf(" ||                    | | |_ | | __|  __  | | | | '_ \\                     || \n");
+    printf(" ||                    | |__| | | |_| |  | | |_| | |_) |                    || \n");
+    printf(" ||                     \\_____|_|\\__|_|  |_|\\__,_|_.__/                     || \n");
+    printf(" ||                                                                         ||\n");
+    printf(" ||     Code source game:    https://github.com/WenaHarle/Game              ||\n");
+    printf(" ============================================================================\n");
+
 
     system("pause");
-    return 0;
+    clearTerminal();
+    main();
+    }
+
+   else if (input == '4')
+    {
+       exit(0);
+    }
+
+
 }
 
 void inisialisasi(int *ukuran, char peta[V][H])
