@@ -24,6 +24,8 @@ typedef struct
 Ular ular[N]; // ukuran maksimal
 Buah buah;
 
+void menu();
+void gameover();
 void inisialisasi(int *ukuran, char peta[V][H]);
 void tampilkanIntro(char peta[V][H]);
 void aturDataIntro(char peta[V][H], int *ukuran);
@@ -33,7 +35,7 @@ void perbaruiPermainan(char peta[V][H], int ukuran);
 void aturDataIntro2(char peta[V][H], int ukuran);
 void gotoxy(int x, int y);
 void tampilkanPeta(char peta[V][H]);
-void menu();
+
 
 int main()
 {
@@ -44,6 +46,8 @@ int main()
     tampilkanPeta(peta);
     system("pause");
     perulanganPermainan(peta, ukuran);
+    clearTerminal();
+    gameover();
     system("pause");
     clearTerminal();
     main();
@@ -56,6 +60,32 @@ void clearTerminal()
     #else
         system("clear");
     #endif
+}
+
+void gameover(){
+printf(" ===========================================================================\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||           __ _  __ _ _ __ ___   ___    _____   _____ _ __             ||\n");
+printf(" ||          / _` |/ _` | '_ ` _ \\ / _ \\  / _ \\ \\ / / _ \\ '__|            ||\n");
+printf(" ||         | (_| | (_| | | | | | |  __/ | (_) \\ V /  __/ |               ||\n");
+printf(" ||          \\__, |\\__,_|_| |_| |_|\\___|  \\___/ \\_/ \\___|_|               ||\n");
+printf(" ||           __/ |                                                       ||\n");
+printf(" ||          |___/                                                        ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ||                                                                       ||\n");
+printf(" ===========================================================================\n");
+
 }
 
 void menu()
@@ -81,7 +111,6 @@ void menu()
     printf(" ||                         -> 3. Kredit                                  ||\n");
     printf(" ||                         -> 4. Exit                                    ||\n");
     printf(" ||				                                          ||\n");
-    printf(" ||                                                                       ||\n");
     printf(" ===========================================================================\n");
 
 
@@ -99,8 +128,6 @@ void menu()
     printf(" ||  - Gunakan tombol AWSD untuk mengontrol pergerakan ular.                ||\n");
     printf(" ||  - Tujuan permainan adalah memakan makanan dan memanjangkan ular.       ||\n");
     printf(" ||  - Jika ular menabrak dinding atau dirinya sendiri, permainan berakhir. ||\n");
-    printf(" ||                                                                         ||\n");
-    printf(" ||                                                                         ||\n");
     printf(" ||                                                                         ||\n");
     printf(" ||                                                                         ||\n");
     printf(" ||                                                                         ||\n");
@@ -133,14 +160,14 @@ void menu()
     printf(" ||    memprogram masterpiece ini                                           ||\n");
     printf(" ||  - GitHub atas menyediakan platform untuk berbagi kode.                 ||\n");
     printf(" ||                                                                         ||\n");
-    printf(" ||                      _____ _ _   _    _       _                         || \n");
+    printf(" ||                      _____ _ _   _    _       _                         ||\n");
     printf(" ||                     / ____(_) | | |  | |     | |                        ||  \n");
     printf(" ||                    | |  __ _| |_| |__| |_   _| |__                      || \n");
     printf(" ||                    | | |_ | | __|  __  | | | | '_ \\                     || \n");
     printf(" ||                    | |__| | | |_| |  | | |_| | |_) |                    || \n");
     printf(" ||                     \\_____|_|\\__|_|  |_|\\__,_|_.__/                     || \n");
     printf(" ||                                                                         ||\n");
-    printf(" ||     Code source game:    https://github.com/WenaHarle/Game              ||\n");
+    printf(" ||     Code source game:    https://github.com/WenaHarle/Game-Snake        ||\n");
     printf(" ============================================================================\n");
 
 
