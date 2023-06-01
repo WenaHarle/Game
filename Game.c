@@ -77,8 +77,8 @@ void menu()
     printf(" ||                              Menu                                     ||\n");
     printf(" ||									  ||\n");
     printf(" ||                         -> 1. Play Game                               ||\n");
-    printf(" ||                         -> 2. Instructions                            ||\n");
-    printf(" ||                         -> 3. Credits                                 ||\n");
+    printf(" ||                         -> 2. Intruksi                                ||\n");
+    printf(" ||                         -> 3. Kredit                                  ||\n");
     printf(" ||                         -> 4. Exit                                    ||\n");
     printf(" ||				                                          ||\n");
     printf(" ||                                                                       ||\n");
