@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include <string.h>
 #include <windows.h>
 #include <conio.h>
 
@@ -36,7 +35,6 @@ void aturDataIntro2(char peta[V][H], int ukuran);
 void gotoxy(int x, int y);
 void tampilkanPeta(char peta[V][H]);
 
-
 int main()
 {
     int ukuran;
@@ -53,6 +51,7 @@ int main()
     main();
 }
 
+
 void clearTerminal()
 {
     #ifdef _WIN32
@@ -64,7 +63,6 @@ void clearTerminal()
 
 void gameover(){
 printf(" ===========================================================================\n");
-printf(" ||                                                                       ||\n");
 printf(" ||                                                                       ||\n");
 printf(" ||                                                                       ||\n");
 printf(" ||                                                                       ||\n");
@@ -167,7 +165,7 @@ void menu()
     printf(" ||                    | |__| | | |_| |  | | |_| | |_) |                    || \n");
     printf(" ||                     \\_____|_|\\__|_|  |_|\\__,_|_.__/                     || \n");
     printf(" ||                                                                         ||\n");
-    printf(" ||     Code source game:    https://github.com/WenaHarle/Game-Snake        ||\n");
+    printf(" ||     Source code game:    https://github.com/WenaHarle/Game-Snake        ||\n");
     printf(" ============================================================================\n");
 
 
@@ -369,3 +367,4 @@ void gotoxy(int x, int y)
     coord.Y = y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
+
